@@ -1,0 +1,8 @@
+{
+  "/WeatherForecast": {
+    "target": "https://localhost:7126",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

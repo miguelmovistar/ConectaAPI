@@ -1,0 +1,19 @@
+<p>conecta works!</p>
+
+<div class="conecta">
+  <h2>Weather Forecast</h2>
+
+  <div *ngIf="loading">Cargando...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <ul *ngIf="!loading && forecasts?.length">
+    <li *ngFor="let f of forecasts">
+      <strong>MOSTRANDO...</strong>
+      <strong>{{ f.date | date }}</strong> —
+      {{ f.summary || 'Sin descripción' }} —
+      {{ f.temperatureC }}°C / {{ f.temperatureF }}°F
+    </li>
+  </ul>
+
+  <div *ngIf="!loading && !forecasts?.length">No hay pronósticos.</div>
+</div>
