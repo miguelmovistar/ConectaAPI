@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherService, WeatherForecast } from '../services/weather.service';
 
@@ -13,8 +13,7 @@ export class ConectaComponent implements OnInit {
   forecasts: WeatherForecast[] = [];
   loading = false;
   error = '';
-
-  constructor(private weatherService: WeatherService) {}
+  weatherService = inject(WeatherService);
 
   ngOnInit(): void {
     this.load();
