@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <h1>ConectaAPI</h1>
+    </div>
+    
+    <button 
+      class="menu-toggle" 
+      (click)="toggleMenu()"
+      [class.active]="isMenuOpen"
+      aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="menu" [class.open]="isMenuOpen">
+      <li *ngFor="let item of menuItems">
+        <a 
+          href="javascript:void(0)" 
+          (click)="onMenuItemClick(item.label)"
+          class="menu-link">
+          <span class="icon">{{ item.icon }}</span>
+          <span class="label">{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
